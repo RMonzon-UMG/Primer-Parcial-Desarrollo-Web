@@ -1,0 +1,36 @@
+/* Personalizar colores */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+header {
+    background: linear-gradient(135deg, #ff6b6b, #ffa500);
+}
+
+/* Personalizar márgenes */
+.card {
+    margin-bottom: 1.5rem;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Efectos hover en tarjetas */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+/* Personalizar fuentes */
+.card-title {
+    color: #333;
+    font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+}

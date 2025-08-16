@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Menu API</title>
+    <link rel="stylesheet" href="./public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-primary text-white py-5">
+        <div class="container text-center">
+            <h1>Pizza Menu Explorer</h1>
+            <p>Menú de pizzas deliciosas usando RapidAPI</p>
+            <button id="loadData" class="btn btn-light">Ver Menu</button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container py-5">
+        <div id="loadingSpinner" class="text-center d-none">
+            <div class="spinner-border"></div>
+            <p>Cargando...</p>
+        </div>
+
+        <div id="dataContainer" class="row">
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-3">
+        <div class="container text-center">
+            <p>Desarrollado por: Ronaldo Monzón</p>
+            <small>API: Pizza and Desserts (RapidAPI)</small>
+        </div>
+    </footer>
+
+    <script src="./public/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
