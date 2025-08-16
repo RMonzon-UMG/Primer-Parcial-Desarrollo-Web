@@ -8,23 +8,19 @@ loadButton.addEventListener('click', cargarAPI);
 function cargarAPI() {
     dataContainer.innerHTML = 'Cargando...';
 
-    $.ajax({
-        url: API_URL,
-        type: 'GET',
-        dataType: 'json',
-        crossDomain: true,
-        success: function (data) {
+    fetch(API_URL)
+        .then(response => response.json())
+        .then(data => {
             console.log('Respuesta:', data);
             mostrarResultado(data);
-        },
-        error: function (xhr, status, error) {
+        })
+        .catch(error => {
             console.error('Error:', error);
-            dataContainer.innerHTML = 'Error: ' + error;
-        }
-    });
+            dataContainer.innerHTML = 'Error al cargar';
+        });
 }
 
 function mostrarResultado(data) {
-    const mensaje = data.mensaje || 'Sin mensaje';
+    const mensaje = data.mensaje;
     dataContainer.innerHTML = `<h4>API Funcionando!</h4><p>Mensaje: ${mensaje}</p>`;
 }
