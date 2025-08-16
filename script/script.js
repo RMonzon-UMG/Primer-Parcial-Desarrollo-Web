@@ -1,40 +1,50 @@
-const DEMO_API_URL = 'https://s1uplfovq4.execute-api.us-east-1.amazonaws.com/default/example';
+const API_URL = 'https://s1uplfovq4.execute-api.us-east-1.amazonaws.com/default/example';
 
-// DOM Elements
 const loadButton = document.getElementById('loadData');
-const loadingSpinner = document.getElementById('loadingSpinner');
 const dataContainer = document.getElementById('dataContainer');
 
-// Event Listeners
-loadButton.addEventListener('click', loadPizzaData);
-document.addEventListener('DOMContentLoaded', loadPizzaData);
+loadButton.addEventListener('click', cargarAPI);
 
+function cargarAPI() {
+    dataContainer.innerHTML = '<div class="col-12"><p>Cargando...</p></div>';
 
-async function loadPizzaData() {
-    showLoading(true);
-    dataContainer.innerHTML = '';
-
-    try {
-        const response = await fetch(API_URL, {
-            method: 'GET',
-            headers: {
-                'x-rapidapi-key': API_KEY,
-                'x-rapidapi-host': API_HOST
+    fetch(API_URL, {
+        mode: 'cors',
+        method: 'GET'
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
             }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Respuesta:', data);
+            mostrarResultado(data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            dataContainer.innerHTML = `
+            <div class="col-12">
+                <div>
+                    <h4>Error CORS</h4>
+                    <p>El API no permite acceso desde archivos locales.</p>
+                    <p>Necesitas usar un servidor local o Live Server.</p>
+                </div>
+            </div>
+        `;
         });
+}
 
-        if (!response.ok) {
-            throw new Error(`Error: ${response.status}`);
-        }
+function mostrarResultado(data) {
+    const mensaje = data.mensaje || 'Sin mensaje';
 
-        const data = await response.json();
-        console.log('API Response:', data);
-        
-        displayData(data);
-    } catch (error) {
-        console.error('Error:', error);
-        showError('Error al cargar las pizzas');
-    } finally {
-        showLoading(false);
-    }
+    dataContainer.innerHTML = `
+        <div class="col-12">
+            <div style="background: #d1ecf1; color: #0c5460; padding: 15px; border-radius: 5px;">
+                <h4>API Funcionando!</h4>
+                <p><strong>Mensaje:</strong> ${mensaje}</p>
+            </div>
+        </div>
+    `;
 }
