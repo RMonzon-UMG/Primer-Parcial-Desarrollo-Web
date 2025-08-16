@@ -7,15 +7,15 @@ body {
 
 /* Márgenes, paddings, bordes (box model) */
 header {
-    margin: 20px;
+    margin: 0;
     padding: 15px;
-    border: 2px solid #ccc;
+    border: none;
 }
 
 section {
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid #ddd;
+    margin: 0;
+    padding: 0;
+    border: none;
 }
 
 /* Listas con diseño visual moderno */
@@ -43,11 +43,29 @@ td {
     border: 1px solid #ddd;
 }
 
-/* Grid */
-main {
+/* Grid Layout - Para pantallas grandes */
+@media (min-width: 768px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .grid-item {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* Grid específico para el header */
+header .text-center {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    grid-template-rows: auto auto auto auto;
+    gap: 15px;
+    justify-items: center;
 }
 
 /* Pseudo-clases */
@@ -71,4 +89,28 @@ h1::before {
 
 #profileImg:hover {
     transform: scale(1.2);
+}
+
+/* Estilos adicionales para las interacciones */
+.btn {
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Animación para el contenedor de datos de API */
+#dataContainer {
+    transition: all 0.5s ease;
+}
+
+/* Grid para los botones del header */
+header .mt-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto;
 }

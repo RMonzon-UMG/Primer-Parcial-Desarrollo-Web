@@ -5,77 +5,154 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil de Usuario - Ronaldo Monzón</title>
+    <link rel="stylesheet" href="public/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-    <header>
-        <h1>Ronaldo Monzón</h1>
-        <h2>Desarrollador Web</h2>
-        <img src="https://media.licdn.com/dms/image/v2/D4E03AQH7VC_IzqIzVQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1713244901924?e=2147483647&v=beta&t=4n5bwDaZghYNbJC52U6OjaUhBpspNW7AcSrT2gY7cD4"
-            alt="Foto de perfil" id="profileImg">
+    <header class="container-fluid bg-primary text-white py-4">
+        <div class="text-center">
+            <h1>Ronaldo Monzón</h1>
+            <h2>Desarrollador Web</h2>
+            <img src="https://media.licdn.com/dms/image/v2/D4E03AQH7VC_IzqIzVQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1713244901924?e=2147483647&v=beta&t=4n5bwDaZghYNbJC52U6OjaUhBpspNW7AcSrT2gY7cD4"
+                alt="Foto de perfil" id="profileImg" class="img-fluid rounded-circle">
+        </div>
+        <!-- Botones de interacción -->
+        <div class="text-center mt-3">
+            <button id="btnBienvenida" class="btn btn-light me-2">🎉 Bienvenida</button>
+            <button id="btnCambiarColor" class="btn btn-warning me-2">🎨 Cambiar Color</button>
+            <button id="btnRestablecerColor" class="btn btn-secondary">↩️ Restablecer</button>
+        </div>
     </header>
 
-    <main>
-        <section>
-            <h3>Sobre mí</h3>
-            <p>Soy estudiante de desarrollo web con experiencia en tecnologías modernas.</p>
-            <p>Me apasiona crear soluciones innovadoras y funcionales.</p>
-        </section>
+    <main class="container my-4">
+        <div class="row">
+            <section class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">Sobre mí</h3>
+                        <p id="textoVariable" class="card-text">Soy estudiante de desarrollo web con experiencia en
+                            tecnologías modernas.</p>
+                        <p class="card-text">Me apasiona crear soluciones innovadoras y funcionales.</p>
+                        <button id="btnCambiarTexto" class="btn btn-outline-info btn-sm">🔄 Cambiar Texto</button>
+                    </div>
+                </div>
+            </section>
 
-        <section>
-            <h3>Enlaces</h3>
-            <a href="https://github.com/RMonzon-UMG" target="_blank">Mi GitHub</a>
-            <a href="https://www.youtube.com/@RONALDOALBERTOMONZONDELEON" target="_blank">Mi YT</a>
-        </section>
+            <section class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">Enlaces</h3>
+                        <a href="https://github.com/RMonzon-UMG" target="_blank" class="btn btn-outline-primary me-2">Mi
+                            GitHub</a>
+                        <a href="https://www.youtube.com/@RONALDOALBERTOMONZONDELEON" target="_blank"
+                            class="btn btn-outline-danger me-2">Mi YT</a>
+                    </div>
+                </div>
+            </section>
 
-        <section>
-            <h3>Habilidades</h3>
-            <ul>
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>JavaScript</li>
-                <li>Bootstrap</li>
-            </ul>
-        </section>
+            <section class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">Habilidades</h3>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">HTML5</li>
+                            <li class="list-group-item">CSS3</li>
+                            <li class="list-group-item">JavaScript</li>
+                            <li class="list-group-item">Bootstrap</li>
+                        </ul>
+                        <div class="mt-3">
+                            <div class="input-group">
+                                <input type="text" id="inputHabilidad" class="form-control"
+                                    placeholder="Nueva habilidad">
+                                <button id="btnAgregarHabilidad" class="btn btn-success">Agregar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-        <section>
-            <h3>Experiencia</h3>
-            <ol>
-                <li>Proyecto de API REST</li>
-                <li>Desarrollo de interfaces</li>
-                <li>Diseño responsive</li>
-            </ol>
-        </section>
+            <section class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">Experiencia</h3>
+                        <ol class="list-group list-group-numbered">
+                            <li class="list-group-item">Vue</li>
+                            <li class="list-group-item">Trabajo en equipo</li>
+                            <li class="list-group-item">Diseño</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
 
-        <section>
-            <h3>Información Personal</h3>
-            <table>
-                <tr>
-                    <td>Nombre</td>
-                    <td>Ronaldo Monzón</td>
-                </tr>
-                <tr>
-                    <td>Edad</td>
-                    <td>22 años</td>
-                </tr>
-                <tr>
-                    <td>Ciudad</td>
-                    <td>Guatemala</td>
-                </tr>
-            </table>
-        </section>
+            <section class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">Información Personal</h3>
+                        <table class="table table-striped">
+                            <tbody>
+                                <tr>
+                                    <td><strong>Nombre</strong></td>
+                                    <td>Ronaldo Monzón</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Edad</strong></td>
+                                    <td>22 años</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ciudad</strong></td>
+                                    <td>Guatemala</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
 
-        <section>
-            <h3>Contacto</h3>
-            <form id="contactForm">
-                <input type="text" id="nombre" placeholder="Tu nombre" required>
-                <input type="email" id="email" placeholder="Tu email" required>
-                <textarea id="mensaje" placeholder="Tu mensaje" required></textarea>
-                <input type="submit" value="Enviar">
-            </form>
-        </section>
+            <section class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">Contacto</h3>
+                        <div id="errorFormulario"></div>
+                        <form id="contactForm">
+                            <div class="mb-3">
+                                <input type="text" id="nombre" class="form-control" placeholder="Tu nombre" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" id="email" class="form-control" placeholder="Tu email" required>
+                            </div>
+                            <div class="mb-3">
+                                <textarea id="mensaje" class="form-control" rows="3" placeholder="Tu mensaje"
+                                    required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Sección API REST -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title mb-0">Demostración API REST</h3>
+                    </div>
+                    <div class="card-body">
+                        <button id="loadData" class="btn btn-primary mb-3">Cargar Datos de API</button>
+                        <div id="dataContainer">
+                            <p class="text-muted">Haz clic en el botón para cargar datos desde la API.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
+
+    <script src="public/js/bootstrap.bundle.min.js"></script>
+    <script src="script/jquery.min.js"></script>
+    <script src="script/script.js"></script>
 </body>
 
 </html>
