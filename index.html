@@ -4,33 +4,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demo API REST</title>
+    <title>Perfil de Usuario - Ronaldo Monzón</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-    <header class="bg-primary text-white py-5">
-        <div class="container text-center">
-            <h1>Demo API REST</h1>
-            <p>Consumo de API con AJAX</p>
-            <button id="loadData" class="btn btn-light">Cargar API</button>
-        </div>
+    <header>
+        <h1>Ronaldo Monzón</h1>
+        <h2>Desarrollador Web</h2>
+        <img src="https://media.licdn.com/dms/image/v2/D4E03AQH7VC_IzqIzVQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1713244901924?e=2147483647&v=beta&t=4n5bwDaZghYNbJC52U6OjaUhBpspNW7AcSrT2gY7cD4"
+            alt="Foto de perfil" id="profileImg">
     </header>
 
-    <main class="container py-5">
-        <div id="dataContainer" class="row">
-        </div>
+    <main>
+        <section>
+            <h3>Sobre mí</h3>
+            <p>Soy estudiante de desarrollo web con experiencia en tecnologías modernas.</p>
+            <p>Me apasiona crear soluciones innovadoras y funcionales.</p>
+        </section>
+
+        <section>
+            <h3>Enlaces</h3>
+            <a href="https://github.com/RMonzon-UMG" target="_blank">Mi GitHub</a>
+            <a href="https://www.youtube.com/@RONALDOALBERTOMONZONDELEON" target="_blank">Mi YT</a>
+        </section>
+
+        <section>
+            <h3>Habilidades</h3>
+            <ul>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+                <li>Bootstrap</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Experiencia</h3>
+            <ol>
+                <li>Proyecto de API REST</li>
+                <li>Desarrollo de interfaces</li>
+                <li>Diseño responsive</li>
+            </ol>
+        </section>
+
+        <section>
+            <h3>Información Personal</h3>
+            <table>
+                <tr>
+                    <td>Nombre</td>
+                    <td>Ronaldo Monzón</td>
+                </tr>
+                <tr>
+                    <td>Edad</td>
+                    <td>22 años</td>
+                </tr>
+                <tr>
+                    <td>Ciudad</td>
+                    <td>Guatemala</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h3>Contacto</h3>
+            <form id="contactForm">
+                <input type="text" id="nombre" placeholder="Tu nombre" required>
+                <input type="email" id="email" placeholder="Tu email" required>
+                <textarea id="mensaje" placeholder="Tu mensaje" required></textarea>
+                <input type="submit" value="Enviar">
+            </form>
+        </section>
     </main>
-
-    <footer class="bg-dark text-white py-3">
-        <div class="container text-center">
-            <p>Desarrollado por: Ronaldo Monzón</p>
-            <small>API Demo</small>
-        </div>
-    </footer>
-
-    <script src="script/jquery.min.js"></script>
-    <script src="script/script.js"></script>
 </body>
 
 </html>
